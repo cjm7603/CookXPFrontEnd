@@ -5,7 +5,7 @@ import SideNav from "../components/SideNav";
 import { FaFilter, FaMagnifyingGlass, FaRectangleXmark } from "react-icons/fa6";
 import { ConfigProvider, Input, Checkbox } from "antd";
 import "../styling.css";
-const url = process.env.REACT_APP_API_URL;
+const url = import.meta.env.VITE_API_URL;
 
 /**
  * Updated so that the Explore page shows *different* recipes instead of repeating the

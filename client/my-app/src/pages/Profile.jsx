@@ -13,7 +13,7 @@ import badge10 from "../assets/badge10.png";
 
 import "../styling.css";
 
-const url = process.env.REACT_APP_API_URL;
+const url = import.meta.env.VITE_API_URL;
 
 const Profile = () => {
     const navigate = useNavigate();

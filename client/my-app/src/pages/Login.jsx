@@ -7,7 +7,7 @@ import logo from "../assets/logo.png";
 
 import "../styling.css";
 
-const url = process.env.REACT_APP_API_URL;
+const url = import.meta.env.VITE_API_URL;
 
 const Login = () => {
   const [username, setUsername] = useState("");

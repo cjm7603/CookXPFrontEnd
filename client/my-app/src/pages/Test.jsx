@@ -5,10 +5,11 @@ import axios from "axios";
 import "../styling.css";
 import {RecipeModel} from '../models/RecipeModel';
 
+const url = import.meta.env.VITE_API_URL;
+
 const Test = () => {
   const [recipe, setRecipe] = useState(RecipeModel);
 
-  const url = process.env.REACT_APP_API_URL;
   const handleGetRandomRecipe = async () => {
     try {
       const response = await axios.get(url+"recipe/random");
