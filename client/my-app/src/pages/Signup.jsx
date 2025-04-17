@@ -14,11 +14,13 @@ const Signup = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const url = process.env.REACT_APP_API_URL;
+
   const handleSignup = async () => {
     setLoading(true);
     setError("");
     try {
-      await axios.post("http://localhost:5000/user/signup", { email, username, password });
+      await axios.post(url+"user/signup", { email, username, password });
       navigate("/login");
     } catch (error) {
       setError("Signup failed. Please try again.");

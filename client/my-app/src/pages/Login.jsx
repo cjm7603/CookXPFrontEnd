@@ -7,6 +7,8 @@ import logo from "../assets/logo.png";
 
 import "../styling.css";
 
+const url = process.env.REACT_APP_API_URL;
+
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +23,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/user/login",
+        url+"user/login",
         { username, password },
         {
           withCredentials: true,

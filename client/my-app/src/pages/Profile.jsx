@@ -13,6 +13,8 @@ import badge10 from "../assets/badge10.png";
 
 import "../styling.css";
 
+const url = process.env.REACT_APP_API_URL;
+
 const Profile = () => {
     const navigate = useNavigate();
     const [token, setToken] = useState(null);
@@ -27,8 +29,8 @@ const Profile = () => {
 
     const handleGetUserInfo = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/user/' + token.username);
-            const achievementResponse = await axios.get("http://localhost:5000/achievement/user/" + token.username);
+            const { data } = await axios.get(url+'user/' + token.username);
+            const achievementResponse = await axios.get(url+"achievement/user/" + token.username);
             if(data && data.userDetails ){
                 setUserInfo(data.userDetails);
                 setUserAchievements(achievementResponse.data.data);
@@ -40,7 +42,7 @@ const Profile = () => {
 
     const handleGetUserFriends = async () => {
         try {
-            const { data } = await axios.get('http://localhost:5000/user/friend/' + token.username);
+            const { data } = await axios.get(url+'user/friend/' + token.username);
             if(data && data.userFriends){
                 setUserFriends(data.userFriends);
                 console.log(data.userFriends);
@@ -57,7 +59,7 @@ const Profile = () => {
             friend_username: friendText.current.value,
         }
         try {
-            const response = await axios.post('http://localhost:5000/user/friend/add', names);
+            const response = await axios.post(url+'user/friend/add', names);
             if(response){
                 if(response.status == 201) {
                     console.log("friend added");
@@ -78,7 +80,7 @@ const Profile = () => {
             friend_username: friend_username,
         }
         try {
-            const response = await axios.delete('http://localhost:5000/user/friend/', {
+            const response = await axios.delete(url+'user/friend/', {
                 data:names,
             });
             if(response){

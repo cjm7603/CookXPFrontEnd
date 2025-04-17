@@ -10,6 +10,8 @@ import { Checkbox, Progress } from "antd";
 
 import "../styling.css";
 
+const url = process.env.REACT_APP_API_URL;
+
 const Home = () => {
   const navigate = useNavigate();
   const [recipe, setRecipe] = useState(RecipeModel);
@@ -29,7 +31,7 @@ const Home = () => {
     setError("");
     try {
 
-      const response = await axios.get("http://localhost:5000/recipe/random");
+      const response = await axios.get(url+"recipe/random");
       const data = response.data;
 
       if(data && data.meals && data.meals.length > 0){
@@ -49,10 +51,10 @@ const Home = () => {
     setLoading(true);
     setError("");
     try {
-      const response = await axios.get("http://localhost:5000/user/recipe/"+token.username);
+      const response = await axios.get(url+"user/recipe/"+token.username);
       const data = response.data;
       if(data && data.recipeDetails.recipe_id > 0){
-        const response2 = await axios.get("http://localhost:5000/recipe/"+data.recipeDetails.recipe_id);
+        const response2 = await axios.get(url+"recipe/"+data.recipeDetails.recipe_id);
         const data2 = response2.data;
         if(data2 && data2.meals && data2.meals.length > 0){
           setRecipe(data2.meals[0]);
@@ -87,8 +89,8 @@ const Home = () => {
   const handleGetUserInfo = async () => {
 
     try {
-        const { data } = await axios.get('http://localhost:5000/user/' + token.username);
-        const achievementResponse = await axios.get("http://localhost:5000/achievement/user/" + token.username);
+        const { data } = await axios.get(url+'user/' + token.username);
+        const achievementResponse = await axios.get(url+"achievement/user/" + token.username);
         if(data && data.userDetails ){
             setUserInfo(data.userDetails);
             setUserAchievements(achievementResponse.data.data);
@@ -123,7 +125,7 @@ const Home = () => {
     }
     try {
       //mark user recipe complete
-      const response = await axios.put('http://localhost:5000/user/recipe/completeRecipe', completeRecipe);
+      const response = await axios.put(url+'user/recipe/completeRecipe', completeRecipe);
       console.log(response);
       if(response){
           if(response.status == 200) {
@@ -145,7 +147,7 @@ const Home = () => {
         username: userInfo.username,
         chef_level: level
       }
-      const response2 = await axios.put("http://localhost:5000/user/"+userInfo.username, data);
+      const response2 = await axios.put(url+"user/"+userInfo.username, data);
       if(response2.status == 200) {
         console.log("user exp updated");
         await handleAchievementUpdates();
@@ -163,7 +165,7 @@ const Home = () => {
 
   const handleAchievementUpdates= async () => {
     try{
-      const response = await axios.get("http://localhost:5000/user/recipe/all/"+userInfo.username);
+      const response = await axios.get(url+"user/recipe/all/"+userInfo.username);
       if(response){
         if (response.status==200){
           const meals = response.data.data;
@@ -174,7 +176,7 @@ const Home = () => {
             name: "Profile Created",
             description: "Welcome to the app, Chef! This is your first achievement :)"
            }
-           const resp2 = await axios.post("http://localhost:5000/achievement/create", data);
+           const resp2 = await axios.post(url+"achievement/create", data);
 
            //adding achievement for making first recipe (since func is only called on recipe completion)
            const data2 = {
@@ -182,7 +184,7 @@ const Home = () => {
             name: "1st Recipe Completion",
             description: "You've completed your first recipe! Good Job!"
            }
-           const resp3 = await axios.post("http://localhost:5000/achievement/create", data2);
+           const resp3 = await axios.post(url+"achievement/create", data2);
           }
           //if 3 meals
           else if(meals.length == 3){
@@ -191,7 +193,7 @@ const Home = () => {
               name: "3 Recipes Completed",
               description: "You've completed 3 Recipes! You're on your way to becoming a master chef!"
             }
-            const resp = await axios.post("http://localhost:5000/achievement/create", data);
+            const resp = await axios.post(url+"achievement/create", data);
           }
           else if(meals.length % 5 == 0){
             const data ={
@@ -199,7 +201,7 @@ const Home = () => {
               name: meals.length + " Recipes Completed",
               description: "You've completed " +meals.legnth+" Recipes! You're amazing!"
             }
-            const resp = await axios.post("http://localhost:5000/achievement/create", data);
+            const resp = await axios.post(url+"achievement/create", data);
           }
           
         }

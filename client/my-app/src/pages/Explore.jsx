@@ -5,6 +5,7 @@ import SideNav from "../components/SideNav";
 import { FaFilter, FaMagnifyingGlass, FaRectangleXmark } from "react-icons/fa6";
 import { ConfigProvider, Input, Checkbox } from "antd";
 import "../styling.css";
+const url = process.env.REACT_APP_API_URL;
 
 /**
  * Updated so that the Explore page shows *different* recipes instead of repeating the
@@ -37,7 +38,7 @@ const Explore = () => {
     setError("");
     try {
       const requests = Array.from({ length: NUM_CARDS }, () =>
-        axios.get("http://localhost:5000/recipe/random")
+        axios.get(url+"recipe/random")
       );
 
       const responses = await Promise.all(requests);
@@ -50,7 +51,7 @@ const Explore = () => {
 
       // If we somehow ended up with fewer than requested (duplicate filtering), fetch until filled
       while (newRecipes.length < NUM_CARDS) {
-        const { data } = await axios.get("http://localhost:5000/recipe/random");
+        const { data } = await axios.get(url+"recipe/random");
         if (data?.meals?.[0] && !newRecipes.some((m) => m.idMeal === data.meals[0].idMeal)) {
           newRecipes.push(data.meals[0]);
         }
@@ -74,7 +75,7 @@ const Explore = () => {
     setLoading(true);
     setError("");
     try {
-      const response = await axios.get("http://localhost:5000/recipe/name/" + search);
+      const response = await axios.get(url+"recipe/name/" + search);
       const meals = response.data?.meals || [];
       console.log(meals);
       const newRecipes = meals.filter(
@@ -84,7 +85,7 @@ const Explore = () => {
 
       // If we somehow ended up with fewer than requested (duplicate filtering), fetch until filled
       while (newRecipes.length < NUM_CARDS) {
-        const { data } = await axios.get("http://localhost:5000/recipe/random");
+        const { data } = await axios.get(url+"recipe/random");
         if (data?.meals?.[0] && !newRecipes.some((m) => m.idMeal === data.meals[0].idMeal)) {
           newRecipes.push(data.meals[0]);
         }
@@ -109,7 +110,7 @@ const Explore = () => {
       is_completed: false,
     };
     try {
-      const response = await axios.post("http://localhost:5000/user/saveRecipe", data);
+      const response = await axios.post(url+"user/saveRecipe", data);
       if (response?.status === 201) {
         navigate("/home");
       }

@@ -8,9 +8,10 @@ import {RecipeModel} from '../models/RecipeModel';
 const Test = () => {
   const [recipe, setRecipe] = useState(RecipeModel);
 
+  const url = process.env.REACT_APP_API_URL;
   const handleGetRandomRecipe = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/recipe/random");
+      const response = await axios.get(url+"recipe/random");
       const data = response.data;
 
       if(data && data.meals && data.meals.length > 0){
