@@ -1,0 +1,1280 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+
+    background-color: #FF8F49;
+    
+    .title {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+
+        .name {
+            margin-bottom: -10px;
+            font-family: 'Josefin Sans';
+            font-size: 36px;
+            color: white;
+        }
+    }
+
+    .login-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 30px;
+
+        border: 2px solid white;
+        border-radius: 100px;
+
+        background-color: #FF8F49;
+
+        font-family: 'Lato';
+        font-size: 20px;
+        color: white;
+
+        transition: all 0.2s;
+
+        &:hover {
+            cursor: pointer;
+            
+            background-color: white;
+            color: #FF8F49;
+        }
+    }
+    
+    .logged-in {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .logout-icon {
+            transition: all 0.2s;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.15);
+            }
+        }
+        
+    }
+}
+
+.sidebar {
+    height: calc(100vh - 40px);
+    padding: 20px;
+
+    .icon {
+        font-size: 30px;
+        color: white;
+
+        transition: all 0.2s;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.15);
+        }
+    }
+
+    .label {
+        font-family: 'Lato';
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+
+        transition: all 0.2s ease;
+
+        
+    }
+
+    .navs {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:hover .label {
+            font-weight: 700;
+        }
+
+        &:hover .icon {
+            transform: scale(1.15);
+        }
+    }
+
+    .collapsed {
+        width: 50px;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        transition: all 0.3s ease;
+    }
+
+    .expanded {
+        width: 200px;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: left;
+
+        transition: all 0.3s ease;
+
+        .heading {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            .title {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+        
+                .logo {
+                    width: 30px;
+                    height: 30px;
+                }
+        
+                .name {
+                    margin-bottom: -5px;
+                    font-family: 'Josefin Sans';
+                    font-size: 20px;
+                    color: white;
+                }
+            }
+        }
+      }
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+
+    background-color: #FF8F49;
+
+    .body {
+        width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 50px;
+
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+
+        background-color: white;
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .hello {
+                font-family: 'Josefin Sans';
+                font-size: 36px;
+
+                .bold {
+                    font-weight: 700;
+                }
+            }
+
+            .user {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                font-family: 'Lato';
+                font-size: 18px;
+
+                .profilePic {
+                    height: 40px;
+                    width: 40px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    border-radius: 100px;
+                    background-color: #FF8F49;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .content {
+            height: calc(100vh - 180px);
+            
+            display: flex;
+            gap: 20px;
+
+            .left {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .levels {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 20px;
+                    gap: 50px;
+                    
+                    border-radius: 10px;
+                    background-color: #64B4AA;
+
+                    .current {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px;
+
+                        .rank {
+                            font-family: 'Lato';
+                            font-size: 18px;
+                            color: white;
+                        }
+
+                        .status {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+    
+                            .points {
+                                display: flex;
+                                justify-content: space-between;
+    
+                                font-family: 'Josefin Sans';
+                                font-size: 28px;
+                                font-weight: 700;
+                                color: white;
+                            }
+    
+                            .labels {
+                                display: flex;
+                                justify-content: space-between;
+    
+                                font-family: 'Lato';
+                                font-size: 14px;
+                                color: white;
+                            }
+                        }
+                    }
+
+                    .next {
+                        font-family: 'Lato';
+                        font-size: 18px;
+                        color: white;
+                    }
+                }
+
+                .ingredients {
+                    max-height: 50%;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    
+                    border-radius: 10px;
+                    border: 2px solid #64B4AA;
+                    
+                    background-color: #64B4AA;
+
+                    overflow: hidden;
+
+                    .heading {
+                        padding: 20px;
+
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+
+                        background-color: white;   
+
+                        font-family: 'Josefin Sans';
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: #64B4AA;
+                    }
+
+                    .list {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 10px 20px;
+                        gap: 5px;
+                        overflow-y: scroll;
+
+                        .ant-checkbox-inner {
+                            border-color: white;
+                          }
+                        
+                        .ant-checkbox-checked .ant-checkbox-inner {
+                            background-color: #FF8F49;
+                            border-color: #FF8F49;
+                        }
+
+                        .item {
+                            font-family: 'Lato';
+                            font-size: 18px;
+                            color: white;
+                        }
+                    }
+
+                    .list::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+            }
+
+            .right {
+                height: 100%;
+                
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                
+                .tagline {
+                    font-family: 'Josefin Sans';
+                    font-size: 32px;
+                    font-weight: 700;
+                    color: #64B4AA;
+                }
+
+                .card {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+
+                    border-radius: 10px;
+
+                    background-color: #64B4AA;
+
+                    .photo {
+                        flex: 1;
+
+                        display: flex;
+
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+
+                    .info {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 20px;
+
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        background-color: #64B4AA;
+
+                        .name {
+                            margin-bottom: -5px;
+                            font-family: 'Josefin Sans';
+                            font-size: 24px;
+                            font-weight: 700;
+                            color: white;
+                        }
+
+                        .viewButton {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 10px 15px;
+
+                            border-radius: 100px;
+
+                            background-color: white;
+
+                            font-family: 'Lato';
+                            font-size: 18px;
+                            text-align: center;
+                            color: #64B4AA;
+
+                            transition: all 0.2s ease;
+
+                            &:hover {
+                                cursor: pointer;
+                                transform: scale(1.05);
+                            }
+                        }
+                    }
+                }
+
+                .button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 10px;
+                    
+                    border-radius: 10px;
+                    border: 2px solid #64B4AA;
+
+                    font-family: 'Lato';
+                    font-size: 18px;
+                    color: #64B4AA;
+
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #64B4AA;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.recipeOpen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #00000050;
+
+    .modal {
+        width: 80%;
+        height: 80%;
+
+        display: flex;
+        flex-direction: column;
+
+        background-color: white;
+
+        border-radius: 10px;
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+
+            border-bottom: 1px solid #64B4AA;
+
+            .name {
+                margin-bottom: -5px;
+
+                font-family: 'Josefin Sans';
+                font-size: 22px;
+                font-weight: 700;
+                color: #64B4AA;
+            }
+
+            .icon {
+                font-size: 30px;
+                color: #64B4AA;
+
+                transition: all 0.2s;
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.15);
+                }
+            }
+        }
+
+        .recipeInfo {
+            height: calc(100% - 65px);
+            display: flex;
+
+            .left {
+                display: flex;
+                flex-direction: column;
+
+                border-right: 1px solid #64B4AA;
+
+                .photo {
+                    display: flex;
+
+                    .thumbnail {
+                        height: 200px;
+                        width: 300px;
+
+                        align-self: stretch;
+
+                        object-fit: cover;
+                    }
+                }
+
+                .ingredients {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                    gap: 10px;
+
+                    overflow: hidden;
+
+                    .heading {
+                        padding-bottom: 10px;
+
+                        border-bottom: 1px solid black;
+
+                        font-family: 'Lato';
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+
+                    .list {
+                        display: flex;
+                        flex-direction: column;
+                        overflow-y: scroll;
+
+                        .ant-checkbox-inner {
+                            border-color: black;
+                          }
+                        
+                        .ant-checkbox-checked .ant-checkbox-inner {
+                            background-color: black;
+                            border-color: black;
+                        }
+
+                        .item {
+                            font-family: 'Lato';
+                            font-size: 14px;
+
+                            margin-bottom: 5px;
+                        }
+                    }
+
+                    .list::-webkit-scrollbar {
+                        display: none;
+                    }
+                }
+            }
+
+            .directions {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+
+                overflow: hidden;
+
+                .heading {
+                    padding-bottom: 10px;
+
+                    border-bottom: 1px solid black;
+
+                    font-family: 'Lato';
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+
+                .list {
+                    display: flex;
+                    flex-direction: column;
+                    overflow-y: scroll;
+
+                    .item {
+                        font-family: 'Lato';
+                        font-size: 14px;
+
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .list::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
+
+.profile {
+    height: 100vh;
+    display: flex;
+
+    background-color: #FF8F49;
+
+    .body {
+        width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 50px;
+
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+
+        background-color: white;
+
+        overflow: hidden;
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .username {
+                font-family: 'Josefin Sans';
+                font-size: 36px;
+                font-weight: 700;
+                margin-bottom: -5px;
+            }
+
+            .profilePic {
+                height: 70px;
+                width: 70px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                border-radius: 100px;
+                background-color: #64B4AA;
+            }
+        }
+
+        .content {
+            height: calc(100vh - 180px);
+            
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            overflow-y: scroll;
+
+            .levels {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 50px;
+                padding: 20px;
+                
+                border-radius: 10px;
+                background-color: #64B4AA;
+
+                .current {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .rank {
+                        font-family: 'Lato';
+                        font-size: 18px;
+                        color: white;
+                    }
+
+                    .status {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .points {
+                            display: flex;
+                            justify-content: space-between;
+
+                            font-family: 'Josefin Sans';
+                            font-size: 28px;
+                            font-weight: 700;
+                            color: white;
+                        }
+
+                        .labels {
+                            display: flex;
+                            justify-content: space-between;
+
+                            font-family: 'Lato';
+                            font-size: 14px;
+                            color: white;
+                        }
+                    }
+                }
+
+                .next {
+                    font-family: 'Lato';
+                    font-size: 18px;
+                    color: white;
+                }
+            }
+
+            .friends {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .myFriends {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .heading {
+                        display: flex;
+                        justify-content: space-between;
+    
+                        font-family: 'Josefin Sans';
+                        font-size: 32px;
+                    }
+
+                    .addFriend {
+                        display: flex;
+        
+                        .input {
+                            flex: 1;
+                            padding: 10px 15px;
+    
+                            border-top-left-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                            border: 1px solid #FF8F49;
+    
+                            font-family: 'Lato';
+                            font-size: 16px;
+                        }
+        
+                        .addButton {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 10px 20px;
+        
+                            border-top-right-radius: 10px;
+                            border-bottom-right-radius: 10px;
+        
+                            background-color: #FF8F49;
+    
+                            font-family: 'Lato';
+                            font-size: 16px;
+                            font-weight: 700;
+                            color: white;
+    
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+    
+                    .items {
+                        display: flex;
+                        gap: 20px;
+
+                        .item {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 15px 20px;
+                            gap: 20px;
+
+                            border-radius: 10px;
+                            
+                            background-color: #64B4AA;
+
+                            font-family: 'Lato';
+                            font-size: 16px;
+                            color: white;
+
+                            .remove {
+                                font-size: 20px;
+
+                                transition: all 0.2s ease;
+
+                                &:hover {
+                                    cursor: pointer;
+                                    transform: scale(1.05);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .achievements {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .heading {
+                    display: flex;
+                    justify-content: space-between;
+
+                    font-family: 'Josefin Sans';
+                    font-size: 32px;
+                }
+
+                .badges {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    gap: 30px;
+
+                    .badge {
+                        max-width: 250px;
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 20px;
+                        gap: 30px;
+
+                        border-radius: 15px;
+                        border: 2px solid #FF8F49;
+
+                        .info {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            text-align: center;
+
+                            .name {
+                                font-family: 'Josefin Sans';
+                                font-weight: 700;
+                                font-size: 20px;
+                            }
+
+                            .description {
+                                font-family: 'Lato';
+                                font-size: 18px;
+                            }
+                        }
+
+                        .date {
+                            font-family: 'Lato';
+                            font-size: 14px;
+                        }
+
+                        .badgeImg {
+                            height: 150px;
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+        }
+
+        .content::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.explore {
+    height: 100vh;
+    display: flex;
+
+    background-color: #FF8F49;
+
+    .body {
+        width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+        gap: 30px;
+
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+
+        background-color: white;
+
+        overflow: hidden;
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 50px 0 50px;
+
+            font-family: 'Josefin Sans';
+            font-size: 36px;
+        }
+
+        .filterSearch {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+
+            .search {
+                width: 100%;
+
+                display: flex;
+                align-items: center;
+                padding: 10px 15px;
+
+                border-radius: 100px;
+                border: 1px solid #FF8F49;
+
+                .icon {
+                    margin-right: 5px;
+
+                    font-size: 18px;
+                    color: #FF8F49;
+                }
+            }
+        }
+
+        .content {
+            height: calc(100vh - 180px);
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 50px;
+            padding: 20px 50px 0 50px;
+
+            overflow-x: hidden;
+            overflow-y: scroll;
+
+            .cards {
+                height: 100%;
+
+                display: flex;
+                flex-wrap: wrap;
+                gap: 40px;
+                
+
+                .card {
+                    height: 400px;
+                    width: 300px;
+
+                    display: flex;
+                    flex-direction: column;
+
+                    border-radius: 10px;
+                    
+                    background-color: #64B4AA;
+
+                    transition: all 0.2s ease;
+
+                    .photo {
+                        flex: 1;
+                        display: flex;
+
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    }
+
+                    .name {
+                        padding: 15px 20px;
+                        
+                        font-family: 'Josefin Sans';
+                        font-size: 20px;
+                        color: white;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.05);
+                    }
+
+                    .add {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 10px;
+
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                        border: 2px solid #64B4AA;
+
+                        background-color: white;
+
+                        font-family: 'Lato';
+                        font-size: 16px;
+                        color: #64B4AA;
+
+                        &:hover {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+
+        .content::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.settings {
+    height: 100vh;
+    display: flex;
+
+    background-color: #FF8F49;
+
+    .body {
+        width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        gap: 50px;
+
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+
+        background-color: white;
+
+        overflow: hidden;
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-family: 'Josefin Sans';
+            font-size: 36px;
+        }
+
+        .content {
+            height: calc(100vh - 180px);
+            
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            overflow-x: hidden;
+
+            font-family: 'Josefin Sans';
+            font-size: 20px;
+        }
+
+        .content::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+
+    .body {
+        height: calc(100vh - 100px);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+
+        .heading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+
+            .tagline {
+                font-family: 'Josefin Sans';
+                font-size: 60px;
+                font-weight: 700;
+                color: #FF8F49;
+                text-align: center;
+            }
+
+            .about {
+                font-family: 'Lato';
+                font-size: 20px;
+                color: black;
+                text-align: center;
+            }
+        }
+
+        .signup-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 30px;
+    
+            border: 2px solid #64B4AA;
+            border-radius: 100px;
+    
+            background-color: #64B4AA;
+    
+            font-family: 'Lato';
+            font-size: 20px;
+            color: white;
+    
+            transition: all 0.2s;
+    
+            &:hover {
+                cursor: pointer;
+                
+                border: 2px solid #64B4AA;
+                background-color: white;
+                color: #64B4AA;
+            }
+        }
+    }
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        .upper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+
+            background-color: #FF8F49;
+            padding: 20px;
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        .lower {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            gap: 30px;
+
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border: 2px solid #FF8F49;
+
+            .prompt {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 0 50px;
+
+                font-family: 'Josefin Sans';
+                font-size: 24px;
+                font-weight: 700;
+                color: #64B4AA;
+                text-align: center;
+
+                .instructions {
+                    font-size: 18px;
+                }
+            }
+
+            .inputs {
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .input {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    font-family: 'Lato';
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: #FF8F49;
+
+                    .input-field {
+                        padding: 10px 15px;
+                        border: 1px solid #FF8F49;
+                        border-radius: 100px;
+
+                        font-family: 'Lato';
+                        font-size: 16px;
+                    }
+                }
+
+                .error {
+                    font-family: 'Lato';
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: #AD3939;
+                    text-align: center;
+                }
+            }
+
+            .login-button {
+                width: 100%;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 30px;
+        
+                border: 2px solid #64B4AA;
+                border-radius: 100px;
+        
+                background-color: #64B4AA;
+        
+                font-family: 'Lato';
+                font-size: 20px;
+                color: white;
+        
+                transition: all 0.2s;
+        
+                &:hover {
+                    cursor: pointer;
+
+                    background-color: white;
+                    color: #64B4AA;
+                }
+            }
+
+            .signup-nav {
+                font-family: 'Lato';
+                font-size: 14px;
+                font-weight: 700;
+                color: #64B4AA;
+
+                .signup-link:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
